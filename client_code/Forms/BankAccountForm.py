@@ -1,8 +1,7 @@
-from .BaseForm import *
-from .BaseInput import *
+from AnvilFusion.components.FormBase import FormBase, POPUP_WIDTH_COL1
+from AnvilFusion.components.FormInputs import *
 
-
-class BankAccountForm(BaseForm):
+class BankAccountForm(FormBase):
     def __init__(self, **kwargs):
         print('BankAccountForm')
         self.account_type = LookupInput(model='BankAccountType', name='account_type', label='Type', select='single')

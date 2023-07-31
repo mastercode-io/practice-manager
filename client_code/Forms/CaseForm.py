@@ -1,13 +1,13 @@
-from .. import Forms
-from .BaseForm import *
-from .BaseInput import *
-from .ContactForm import *
+from AnvilFusion.components.FormBase import FormBase, POPUP_WIDTH_COL3
+from AnvilFusion.components.FormInputs import *
+from .ContactForm import ContactForm
+
 
 FEE_TYPE_RETAINER = ('Flat Fee', 'Hourly', 'Hybrid Flat/Hourly', 'Hybrid Flat/Contingency')
 FEE_TYPE_LITIGATION = ('Contingency', 'Hybrid Flat/Contingency', 'Hybrid Hourly/Contingency')
 
 
-class CaseForm(BaseForm):
+class CaseForm(FormBase):
 
     def __init__(self, **kwargs):
 
