@@ -1,7 +1,7 @@
 from AnvilFusion.components.FormBase import FormBase, POPUP_WIDTH_COL3
 from AnvilFusion.components.FormInputs import *
 from AnvilFusion.components.MultiFieldInput import MultiFieldInput
-from .EntityForm import EntityForm
+from .. import Forms
 
 
 class ContactForm(FormBase):
@@ -14,7 +14,7 @@ class ContactForm(FormBase):
                                          add_item_label='Add Group', add_item_model='ContactGroup',
                                          add_item_form=FormBase)
         self.entity = LookupInput(name='entity', label='Entity', model='Entity', text_field='name',
-                                  add_item_label='Add Entity', add_item_form=EntityForm)
+                                  add_item_label='Add Entity', add_item_form=Forms.EntityForm)
         self.email = TextInput(name='email', label='Email')
         self.mobile_phone = TextInput(name='mobile_phone', label='Mobile Phone')
         self.work_phone = TextInput(name='work_phone', label='Work Phone')

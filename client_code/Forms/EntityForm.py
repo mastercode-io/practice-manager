@@ -1,6 +1,6 @@
 from AnvilFusion.components.FormBase import FormBase, POPUP_WIDTH_COL2
 from AnvilFusion.components.FormInputs import *
-from .ContactForm import ContactForm
+from .. import Forms
 
 
 class EntityForm(FormBase):
@@ -14,7 +14,7 @@ class EntityForm(FormBase):
         self.website = TextInput(name='website', label='Website')
         self.primary_contact = LookupInput(name='primary_contact', label='Primary Contact', model='Contact',
                                            text_field='full_name',  add_item_label='Add Contact',
-                                           add_item_form=ContactForm)
+                                           add_item_form=Forms.ContactForm)
 
         fields = [
             self.name,
