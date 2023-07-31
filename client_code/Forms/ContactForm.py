@@ -1,5 +1,6 @@
 from AnvilFusion.components.FormBase import FormBase, POPUP_WIDTH_COL3
 from AnvilFusion.components.FormInputs import *
+from AnvilFusion.components.MultiFieldInput import MultiFieldInput
 from .EntityForm import EntityForm
 
 
@@ -21,9 +22,9 @@ class ContactForm(FormBase):
 
         self.personal_details = ComboInput(name='personal_details', model='Contact')
         self.address = MultiFieldInput(name='address', model='Contact')
-        self.employment = ComboInput(name='employment', model='Contact')
-        self.criminal_history = ComplexInput(name='criminal_history', model='Contact', cols=2)
-        self.additional_info = CombinedInput(name='additional_info', label='Additional Information', model='Contact')
+        self.employment = MultiFieldInput(name='employment', model='Contact')
+        self.criminal_history = MultiFieldInput(name='criminal_history', model='Contact', cols=2)
+        self.additional_info = MultiFieldInput(name='additional_info', label='Additional Information', model='Contact')
 
         sections = [
             {'name': '_', 'rows': [
