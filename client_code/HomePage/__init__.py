@@ -14,13 +14,13 @@ AppEnv.data_models = app.models
 AppEnv.forms = Forms
 AppEnv.views = Views
 AppEnv.pages = Pages
-AppEnv.init_enumerations(model_list=app.models.ENUM_MODEL_LIST)
 
 
 class HomePage(HomePageTemplate):
     def __init__(self, **properties):
         init_user_session()
-        
+        AppEnv.init_enumerations(model_list=app.models.ENUM_MODEL_LIST)
+
         self.content_id = 'pm-content'
         self.content_control = None
 
