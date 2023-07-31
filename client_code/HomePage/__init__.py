@@ -8,6 +8,7 @@ from .. import Views
 from .. import Pages
 import navigation as nav
 
+
 AppEnv.APP_ID = 'practiceMANAGER'
 AppEnv.data_models = app.models
 AppEnv.forms = Forms
