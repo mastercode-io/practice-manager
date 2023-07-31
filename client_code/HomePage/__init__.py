@@ -10,7 +10,7 @@ from ... import Forms
 from ... import Views
 
 
-class HomePage(HomePageTemplate):
+class HomePage_(HomePageTemplate):
     def __init__(self, **properties):
         app.session.init_user_session()
 

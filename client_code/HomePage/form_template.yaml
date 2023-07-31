@@ -2,6 +2,5 @@ container:
   type: HtmlTemplate
   properties: {tooltip: '', background: '', foreground: '', border: '', visible: true,
     role: null, html: '@theme:main-page.html'}
-  event_bindings: {show: form_show}
 components: []
 is_package: true
