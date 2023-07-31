@@ -1,17 +1,24 @@
 from ._anvil_designer import HomePageTemplate
-import anvil.server
 import anvil.js
 from anvil.js.window import jQuery, ej
-
+from AnvilFusion.tools.utils import AppEnv, init_user_session
+from .. import app
+from .. import Forms
+from .. import Views
+from .. import Pages
 import navigation as nav
-from ... import app
-from ... import Forms
-from ... import Views
+
+AppEnv.APP_ID = 'practiceMANAGER'
+AppEnv.data_models = app.models
+AppEnv.forms = Forms
+AppEnv.views = Views
+AppEnv.pages = Pages
+AppEnv.init_enumerations(model_list=app.models.ENUM_MODEL_LIST)
 
 
 class HomePage_(HomePageTemplate):
     def __init__(self, **properties):
-        app.session.init_user_session()
+        init_user_session()
 
         self.content_id = 'pm-content'
         self.content_control = None
