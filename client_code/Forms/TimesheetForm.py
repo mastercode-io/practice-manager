@@ -1,12 +1,9 @@
-from .BaseForm import BaseForm, POPUP_WIDTH_COL2
-from .BaseInput import *
-from ..app import constants
-from ..orm_client.model import Staff
-
+from AnvilFusion.components.FormBase import FormBase, POPUP_WIDTH_COL2
+from AnvilFusion.components.FormInputs import *
 from datetime import datetime, timedelta
 
 
-class TimesheetForm(BaseForm):
+class TimesheetForm(FormBase):
     def __init__(self, **kwargs):
         print('TimesheetForm')
 

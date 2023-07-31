@@ -1,8 +1,7 @@
-from ..orm_client.model import *
-from .BaseForm import BaseForm, POPUP_WIDTH_COL2
-from .BaseInput import *
-
+from AnvilFusion.components.FormBase import FormBase, POPUP_WIDTH_COL2
+from AnvilFusion.components.FormInputs import *
 import datetime
+
 
 # expense status options
 EXPENSE_STATUS_OPEN = 'Open'
@@ -13,7 +12,7 @@ EXPENSE_STATUS_OPTIONS = [
 ]
 
 
-class ExpenseForm(BaseForm):
+class ExpenseForm(FormBase):
     def __init__(self, **kwargs):
         print('ExpenseForm')
         self.date = DateInput(name='date', label='Date', value=datetime.date.today())

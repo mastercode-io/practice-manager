@@ -1,11 +1,9 @@
-from ..orm_client.model import *
-from .BaseForm import BaseForm, POPUP_WIDTH_COL2
-from .BaseInput import *
-
+from AnvilFusion.components.FormBase import FormBase, POPUP_WIDTH_COL2
+from AnvilFusion.components.FormInputs import *
 import datetime
 
 
-class TaskForm(BaseForm):
+class TaskForm(FormBase):
     def __init__(self, **kwargs):
 
         print('TaskForm')

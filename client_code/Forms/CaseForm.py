@@ -1,7 +1,8 @@
 from AnvilFusion.components.FormBase import FormBase, POPUP_WIDTH_COL3
 from AnvilFusion.components.FormInputs import *
+from .ClientForm import ClientForm
 from .ContactForm import ContactForm
-
+from .EntityForm import EntityForm
 
 FEE_TYPE_RETAINER = ('Flat Fee', 'Hourly', 'Hybrid Flat/Hourly', 'Hybrid Flat/Contingency')
 FEE_TYPE_LITIGATION = ('Contingency', 'Hybrid Flat/Contingency', 'Hybrid Hourly/Contingency')
@@ -26,24 +27,23 @@ class CaseForm(FormBase):
                                                         label='Add Statute of Limitations', save=False,
                                                         on_change=self.add_sol)
         self.court = LookupInput(name='court', label='Court', model='Entity', text_field='name',
-                                 add_item_label='Add Court', add_item_form=Forms.EntityForm)
+                                 add_item_label='Add Court', add_item_form=EntityForm)
         self.department = LookupInput(name='department', label='Department', model='Contact', text_field='entity.name',
-                                      add_item_label='Add Judge', add_item_form=Forms.ContactForm)
+                                      add_item_label='Add Judge', add_item_form=ContactForm)
         self.case_number = TextInput(name='case_number', label='Case Number')
         self.incident_date = DateInput(name='incident_date', label='Incident Date')
         self.incident_location = TextInput(name='incident_location', label='Incident Location')
         self.case_description = MultiLineInput(name='case_description', label='Case Description', rows=5)
         self.clients = LookupInput(name='clients', label='Client(s)', model='Client', text_field='client_name',
-                                   select='multi', add_item_label='Add Client', add_item_form=Forms.ClientForm)
+                                   select='multi', add_item_label='Add Client', add_item_form=ClientForm)
         self.contacts = LookupInput(name='contacts', label='Contacts', model='Contact', text_field='full_name',
-                                    select='multi', add_item_label='Add Contact', add_item_form=Forms.ContactForm)
+                                    select='multi', add_item_label='Add Contact', add_item_form=ContactForm)
         self.staff = LookupInput(name='staff', label='Staff', model='Staff', text_field='full_name', select='multi')
         self.share_case_information_with = LookupInput(name='share_case_information_with',
                                                        label='Share case information with',
                                                        model='Contact', text_field='full_name')
         self.lead = LookupInput(name='lead', label='Lead', model='Lead', text_field='case_name')
         self.fee_type = LookupInput(name='fee_type', label='Fee Type', model='FeeType', on_change=self.fee_type_change)
-        # self.fee_type = LookupInput(name='fee_type', label='Fee Type', model='FeeType')
         self.flat_fee_retainer = NumberInput(name='flat_fee_retainer', label='Flat Fee Retainer')
         self.hourly_retainer = NumberInput(name='hourly_retainer', label='Hourly Retainer')
         self.pre_litigation_rate = NumberInput(name='pre_litigation_rate', label='Pre Litigation Rate')

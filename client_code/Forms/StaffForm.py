@@ -1,6 +1,6 @@
-from ..orm_client.model import *
-from .BaseForm import BaseForm, POPUP_WIDTH_COL3
-from .BaseInput import *
+from AnvilFusion.components.FormBase import FormBase, POPUP_WIDTH_COL3
+from AnvilFusion.components.FormInputs import *
+
 
 PM_PAYMENT_TYPE_LIST = [
     {'uid': 'hourly', 'name': 'Hourly'},
@@ -79,7 +79,7 @@ PM_EMPLOYMENT_STATUS_LIST = [
 ]
 
 
-class StaffForm(BaseForm):
+class StaffForm(FormBase):
     def __init__(self, **kwargs):
         print('StaffForm')
         # generale information

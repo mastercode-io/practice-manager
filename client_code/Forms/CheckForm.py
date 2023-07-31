@@ -1,6 +1,5 @@
 from AnvilFusion.components.FormBase import FormBase, POPUP_WIDTH_COL1
 from AnvilFusion.components.FormInputs import *
-from AnvilFusion.components.MultiInput import SchemaInput
 
 
 class CheckForm(FormBase):

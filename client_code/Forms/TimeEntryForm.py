@@ -1,12 +1,9 @@
-from .BaseForm import *
-from .BaseInput import *
-from ..app import constants
-from ..orm_client.model import Case, Staff
-
+from AnvilFusion.components.FormBase import FormBase, POPUP_WIDTH_COL3
+from AnvilFusion.components.FormInputs import *
 from datetime import datetime, date
 
 
-class TimeEntryForm(BaseForm):
+class TimeEntryForm(FormBase):
 
     def __init__(self, **kwargs):
 

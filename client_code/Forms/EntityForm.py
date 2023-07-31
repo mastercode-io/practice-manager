@@ -1,10 +1,9 @@
-from ..orm_client.model import *
-from ..Forms import ContactForm
-from .BaseForm import BaseForm, POPUP_WIDTH_COL2
-from .BaseInput import *
+from AnvilFusion.components.FormBase import FormBase, POPUP_WIDTH_COL2
+from AnvilFusion.components.FormInputs import *
+from .ContactForm import ContactForm
 
 
-class EntityForm(BaseForm):
+class EntityForm(FormBase):
     def __init__(self, **kwargs):
         print('EntityForm')
         self.name = TextInput(name='name', label='Name')

@@ -1,9 +1,8 @@
-from .BaseForm import BaseForm, POPUP_WIDTH_COL3
-from .BaseInput import *
-from ..orm_client.model import Contact, Entity
+from AnvilFusion.components.FormBase import FormBase, POPUP_WIDTH_COL3
+from AnvilFusion.components.FormInputs import *
 
 
-class ClientForm(BaseForm):
+class ClientForm(FormBase):
     def __init__(self, **kwargs):
         self.is_individual = CheckboxInput(name='is_individual', label='Client is an individual', value=True,
                                            enabled=False, on_change=self.show_client_details)

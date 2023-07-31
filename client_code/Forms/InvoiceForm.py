@@ -1,8 +1,9 @@
-from .BaseForm import BaseForm, BaseSubform
-from .BaseInput import *
-from .ExpenseForm import *
-from .PaymentForm import *
-from .TimeEntryForm import *
+from AnvilFusion.components.FormBase import FormBase, SubformBase, POPUP_WIDTH_COL3
+from AnvilFusion.components.FormInputs import *
+# from .ExpenseForm import ExpenseForm
+# from .PaymentForm import PaymentForm
+# from .TimeEntryForm import TimeEntryForm
+
 
 # expense status options
 INVOICE_STATUS_DRAFT = 'draft'
@@ -19,7 +20,7 @@ INVOICE_STATUS_OPTIONS = [
 ]
 
 
-class InvoiceForm(BaseForm):
+class InvoiceForm(FormBase):
     def __init__(self, **kwargs):
         print('InvoiceForm')
         self.invoice_number = NumberInput(name='invoice_number', label='Invoice Number')
@@ -51,7 +52,7 @@ class InvoiceForm(BaseForm):
             NumberInput(name='duration', label='Duration (hours)'),
             NumberInput(name='total', label='Total')
         ]
-        self.time_entries = BaseSubform(name='time_entries', fields=time_entry_fields, model='TimeEntry',
+        self.time_entries = SubformBase(name='time_entries', fields=time_entry_fields, model='TimeEntry',
                                         link_model='Invoice', link_field='invoice', save=False)
 
         expense_fields = [
@@ -66,7 +67,7 @@ class InvoiceForm(BaseForm):
             CheckboxInput(name='billable', label='Billable'),
             DropdownInput(name='status', label='Status', select='single', options=EXPENSE_STATUS_OPTIONS)
         ]
-        self.expenses = BaseSubform(name='expenses', fields=expense_fields, model='Expense', link_model='Invoice',
+        self.expenses = SubformBase(name='expenses', fields=expense_fields, model='Expense', link_model='Invoice',
                                     link_field='invoice', save=False)
 
         adjustment_fields = [
@@ -78,7 +79,7 @@ class InvoiceForm(BaseForm):
             NumberInput(name='adjustment_amount', label='Adjustment $'),
             NumberInput(name='adjustment_percent', label='Adjustment %'),
         ]
-        self.adjustments = BaseSubform(name='adjustments', fields=adjustment_fields)
+        self.adjustments = SubformBase(name='adjustments', fields=adjustment_fields)
 
         sections = [
             {'name': '_', 'rows': [

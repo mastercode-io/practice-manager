@@ -1,13 +1,13 @@
-from .. import Forms
-from .BaseForm import BaseForm, BaseSubform, POPUP_WIDTH_COL3
-from .BaseInput import *
-from ..orm_client.model import *
+from AnvilFusion.components.FormBase import FormBase, POPUP_WIDTH_COL3
+from AnvilFusion.components.FormInputs import *
+from .ContactForm import ContactForm
+
 
 FEE_TYPE_RETAINER = ('Flat Fee', 'Hourly', 'Hybrid Flat/Hourly', 'Hybrid Flat/Contingency')
 FEE_TYPE_LITIGATION = ('Contingency', 'Hybrid Flat/Contingency', 'Hybrid Hourly/Contingency')
 
 
-class LeadForm(BaseForm):
+class LeadForm(FormBase):
 
     def __init__(self, **kwargs):
 
