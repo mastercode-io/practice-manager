@@ -23,7 +23,7 @@ class ContactForm(FormBase):
         self.address = MultiFieldInput(name='address', model='Contact')
         self.employment = ComboInput(name='employment', model='Contact')
         self.criminal_history = ComplexInput(name='criminal_history', model='Contact', cols=2)
-        self.additional_info = ComboInput(name='additional_info', label='Additional Information', model='Contact')
+        self.additional_info = CombinedInput(name='additional_info', label='Additional Information', model='Contact')
 
         sections = [
             {'name': '_', 'rows': [
