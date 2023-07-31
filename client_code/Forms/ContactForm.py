@@ -20,9 +20,9 @@ class ContactForm(FormBase):
         self.title_position = TextInput(name='title_position', label='Title / Position')
 
         self.personal_details = ComboInput(name='personal_details', model='Contact')
-        self.address = ComboInput(name='address', model='Contact')
+        self.address = MultiFieldInput(name='address', model='Contact')
         self.employment = ComboInput(name='employment', model='Contact')
-        self.criminal_history = ComboInput(name='criminal_history', model='Contact', cols=2)
+        self.criminal_history = ComplexInput(name='criminal_history', model='Contact', cols=2)
         self.additional_info = ComboInput(name='additional_info', label='Additional Information', model='Contact')
 
         sections = [
