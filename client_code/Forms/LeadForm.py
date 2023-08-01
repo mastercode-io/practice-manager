@@ -1,4 +1,4 @@
-from AnvilFusion.components.FormBase import FormBase, POPUP_WIDTH_COL3
+from AnvilFusion.components.FormBase import FormBase, SubformBase, POPUP_WIDTH_COL3
 from AnvilFusion.components.FormInputs import *
 from .. import Forms
 
@@ -17,7 +17,7 @@ class LeadForm(FormBase):
             TextInput(name='status', label='Status'),
             CheckboxInput(name='completed', label='Completed', save=False),
         ]
-        self.schedule_activity = BaseSubform(name='lead_activity', fields=schedule_activity_fields,
+        self.schedule_activity = SubformBase(name='lead_activity', fields=schedule_activity_fields,
                                              model='LeadActivity', link_model='Lead', link_field='lead', save=False)
 
         self.lead_source = LookupInput(model='LeadSource', name='lead_source', label='Lead Source',

@@ -2,10 +2,10 @@ from ._anvil_designer import HomePageTemplate
 import anvil.js
 from anvil.js.window import jQuery, ej
 from AnvilFusion.tools.utils import AppEnv, init_user_session
-from .. import app
-from .. import Forms
-from .. import Views
-from .. import Pages
+from ... import app
+from ... import Forms
+from ... import Views
+from ... import Pages
 import navigation as nav
 
 
