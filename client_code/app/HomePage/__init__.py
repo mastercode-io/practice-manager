@@ -13,7 +13,7 @@ AppEnv.APP_ID = 'practiceMANAGER'
 AppEnv.data_models = app.models
 AppEnv.forms = Forms
 AppEnv.views = Views
-AppEnv.pages = Pages
+AppEnv.pages = Pages                             
 
 
 class HomePage(HomePageTemplate):
