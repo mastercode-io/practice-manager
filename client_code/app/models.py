@@ -200,6 +200,12 @@ class CaseStatus:
 
 
 @model_type
+class CaseWorkflow:
+    _title = 'name'
+    name = Attrubute(field_type=types.FieldTypes.SINGLE_LINE)
+    
+
+@model_type
 class CauseOfAction:
     _title = 'cause_of_action'
 

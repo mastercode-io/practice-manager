@@ -507,6 +507,11 @@ db_schema:
       admin_ui: {width: 200}
       type: link_single
       target: lead_source
+  caseworkflow:
+    client: none
+    server: full
+    columns: []
+    title: CaseWorkflow
   case_stage:
     title: Case Stage
     client: none
