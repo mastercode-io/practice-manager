@@ -202,7 +202,7 @@ class CaseStatus:
 @model_type
 class CaseWorkflow:
     _title = 'name'
-    name = Attrubute(field_type=types.FieldTypes.SINGLE_LINE)
+    name = Attribute(field_type=types.FieldTypes.SINGLE_LINE)
     
 
 @model_type
