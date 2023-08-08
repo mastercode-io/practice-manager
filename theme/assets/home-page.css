@@ -195,7 +195,12 @@ li.e-list-item.e-level-1.e-hover {
 }
 
 /* Grid Toolbar */
-.pm-button-color {
+.pm-button-color > .e-tbar-btn-text {
+  color: red!important;
+}
+
+.e-grid .e-toolbar .e-btn {
+  background-color: blue!important;
   color: red!important;
 }
 
