@@ -186,12 +186,17 @@ li.e-list-item.e-level-1.e-hover {
   padding-bottom: 10px;
 }
 
-/* Grid Customization */
+/* Grid View */
 .pm-gridview-title {
   margin-top: -.5em;
 }
 .e-grid {
   width: 100% !important;
+}
+
+/* Grid Toolbar */
+.pm-button-color {
+  color: red!important;
 }
 
 /* Form Elements */
