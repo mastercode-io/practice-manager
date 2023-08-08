@@ -13,13 +13,21 @@ AppEnv.APP_ID = 'practiceMANAGER'
 AppEnv.data_models = app.models
 AppEnv.forms = Forms
 AppEnv.views = Views
-AppEnv.pages = Pages                             
+AppEnv.pages = Pages
+AppEnv.grid_settings  = {
+  'toolbar_items': [
+    {'text': 'Add', 'prefixIcon': 'e-add', 'cssClass': '', 'style': 'background-color:#87CEEB; color:white;'},
+    {'text': 'Edit', 'prefixIcon': 'e-edit', 'cssClass': '', 'style': 'background-color:#98FB98; color:white;'},
+    {'text': 'Delete', 'prefixIcon': 'e-delete', 'cssClass': '', 'style': 'background-color:#FF6347; color:white;'},
+    {'text': 'Search'},
+  ]
+}
 
 
 class HomePage(HomePageTemplate):
     def __init__(self, **properties):
         init_user_session()
-        AppEnv.init_enumerations(model_list=app.models.ENUM_MODEL_LIST)
+        AppEnv.add_enumerations(model_list=app.models.ENUM_MODEL_LIST)
 
         self.content_id = 'pm-content'
         self.content_control = None
