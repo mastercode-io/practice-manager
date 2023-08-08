@@ -194,16 +194,6 @@ li.e-list-item.e-level-1.e-hover {
   width: 100% !important;
 }
 
-/* Grid Toolbar */
-.pm-button-color > .e-tbar-btn-text {
-  color: red!important;
-}
-
-.e-grid .e-toolbar .e-btn {
-  background-color: blue!important;
-  color: red!important;
-}
-
 /* Form Elements */
 .pm-dialog-section-header {
   font-size: 16px!important;
