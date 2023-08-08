@@ -20,7 +20,8 @@ AppEnv.grid_settings  = {
     {'text': 'Edit', 'prefixIcon': 'e-edit', 'cssClass': '', 'style': 'background-color:#98FB98; color:white;'},
     {'text': 'Delete', 'prefixIcon': 'e-delete', 'cssClass': '', 'style': 'background-color:#FF6347; color:white;'},
     {'text': 'Search'},
-  ]
+  ],
+  'modes': ['Sort', 'Filter', 'InfiniteScroll', 'Toolbar', 'Edit', 'ForeignKey']
 }
 
 
