@@ -114,7 +114,59 @@ db_schema:
   case_workflow_item:
     client: none
     server: full
-    columns: []
+    columns:
+    - name: updated_time
+      admin_ui: {}
+      type: datetime
+    - name: updated_by
+      admin_ui: {}
+      type: string
+    - name: uid
+      admin_ui: {}
+      type: string
+    - name: type
+      admin_ui: {}
+      type: string
+    - name: tenant_uid
+      admin_ui: {}
+      type: string
+    - name: related_task
+      admin_ui: {}
+      type: link_single
+      target: case_workflow_item
+    - name: priority
+      admin_ui: {}
+      type: string
+    - name: practice_area
+      admin_ui: {}
+      type: link_single
+      target: practice_area
+    - name: notes
+      admin_ui: {}
+      type: string
+    - name: duration
+      admin_ui: {}
+      type: number
+    - name: due_date_base
+      admin_ui: {}
+      type: string
+    - name: documents
+      admin_ui: {}
+      type: simpleObject
+    - name: created_time
+      admin_ui: {}
+      type: datetime
+    - name: created_by
+      admin_ui: {}
+      type: string
+    - name: assigned_to
+      admin_ui: {}
+      type: link_multiple
+      target: staff
+    - name: activity
+      admin_ui: {}
+      type: link_single
+      target: activity
     title: Case Workflow Item
   case_contact:
     title: Case Contact
