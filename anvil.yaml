@@ -507,11 +507,6 @@ db_schema:
       admin_ui: {width: 200}
       type: link_single
       target: lead_source
-  caseworkflow:
-    client: none
-    server: full
-    columns: []
-    title: CaseWorkflow
   case_stage:
     title: Case Stage
     client: none
@@ -1042,6 +1037,11 @@ db_schema:
     - name: tenant_uid
       admin_ui: {width: 200}
       type: string
+  caseworkflowitem:
+    client: none
+    server: full
+    columns: []
+    title: CaseWorkflowItem
   contact_role:
     title: Contact Role
     client: none
