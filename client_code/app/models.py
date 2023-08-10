@@ -212,7 +212,7 @@ class CaseWorkflowItem:
     assigned_to = Relationship('Staff', with_many=True)
     priority = Attribute(field_type=types.FieldTypes.ENUM_SINGLE)
     notes = Attribute(field_type=types.FieldTypes.MULTI_LINE)
-    documents = Attribute(field_type=types.FieldTypes.FILE_UPLOAD, with_many=True)
+    documents = Attribute(field_type=types.FieldTypes.FILE_UPLOAD)
     
 
 @model_type
