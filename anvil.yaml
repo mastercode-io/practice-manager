@@ -111,6 +111,11 @@ db_schema:
     - name: uid
       admin_ui: {}
       type: string
+  case_workflow_item:
+    client: none
+    server: full
+    columns: []
+    title: Case Workflow Item
   case_contact:
     title: Case Contact
     client: none
@@ -1037,11 +1042,6 @@ db_schema:
     - name: tenant_uid
       admin_ui: {width: 200}
       type: string
-  caseworkflowitem:
-    client: none
-    server: full
-    columns: []
-    title: CaseWorkflowItem
   contact_role:
     title: Contact Role
     client: none
