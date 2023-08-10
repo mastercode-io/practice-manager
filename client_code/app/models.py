@@ -201,7 +201,7 @@ class CaseStatus:
 
 @model_type
 class CaseWorkflowItem:
-    _title = 'practice_area'
+    _title = 'item_name'
     
     practice_area = Relationship('PracticeArea')
     type = Attribute(field_type=types.FieldTypes.ENUM_SINGLE)
@@ -214,6 +214,11 @@ class CaseWorkflowItem:
     notes = Attribute(field_type=types.FieldTypes.MULTI_LINE)
     documents = Attribute(field_type=types.FieldTypes.FILE_UPLOAD)
     
+    @staticmethod
+    def get_item_name(args):
+        return f"{args['practice_area']} - {args['activity']}"
+    item_name = Computed(('practice_area', 'activity'), 'get_item_name')
+
 
 @model_type
 class CauseOfAction:
