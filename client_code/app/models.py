@@ -200,17 +200,19 @@ class CaseStatus:
 
 
 @model_type
-class CaseWorkflow:
-    _title = 'name'
+class CaseWorkflowItem:
+    _title = 'practice_area'
     
     practice_area = Relationship('PracticeArea')
     type = Attribute(field_type=types.FieldTypes.ENUM_SINGLE)
     activity = Relationship('Activity')
-    related_task = Relationship('CaseWorkflowTask')
+    related_task = Relationship('CaseWorkflowItem')
     due_date_base = Attribute(field_type=types.FieldTypes.ENUM_SINGLE)
     duration = Attribute(field_type=types.FieldTypes.NUMBER)
     assigned_to = Relationship('Staff', with_many=True)
     priority = Attribute(field_type=types.FieldTypes.ENUM_SINGLE)
+    notes = Attribute(field_type=types.FieldTypes.MULTI_LINE)
+    documents = Attribute(field_type=types.FieldTypes.FILE_UPLOAD, with_many=True)
     
 
 @model_type
