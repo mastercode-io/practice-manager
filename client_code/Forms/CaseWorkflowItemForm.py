@@ -9,7 +9,7 @@ class CaseWorkflowItemForm(FormBase):
         practice_area = LookupInput(name='practice_area', label='Practice Area', model='PracticeArea')
         type = RadioButtonInput(name='type', label='Type', options=['Task', 'Event'], value='Task')
         activity = LookupInput(name='activity', label='Activity', model='Activity')
-        related_task = LookupInput(name='related_task', label='Related Task', model='CaseWorkflowItem')
+        related_task = LookupInput(name='related_task', label='Related Task', model='CaseWorkflowItem', text_field='item_name')
         due_date_base = RadioButtonInput(name='due_date_base', label='Due Date Based On', options=['Start Date', 'End Date'])
         before_after = RadioButtonInput(name='before_after', label='When', options=['Before', 'After'], save=False)
         duration = NumberInput(name='duration', label='Duration')
