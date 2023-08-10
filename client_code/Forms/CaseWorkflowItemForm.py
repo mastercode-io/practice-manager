@@ -29,4 +29,4 @@ class CaseWorkflowItemForm(FormBase):
             }
         ]
         
-        super().__init__(model='CaseWorkflowItem', secrions=sections, width=POPUP_WIDTH_COL2, **kwargs)
+        super().__init__(model='CaseWorkflowItem', sections=sections, width=POPUP_WIDTH_COL2, **kwargs)
