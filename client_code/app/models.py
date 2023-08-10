@@ -201,7 +201,7 @@ class CaseStatus:
 
 @model_type
 class CaseWorkflowItem:
-    _title = 'practice_area'
+    _title = 'practice_area.name'
     
     practice_area = Relationship('PracticeArea')
     type = Attribute(field_type=types.FieldTypes.ENUM_SINGLE)
