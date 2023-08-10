@@ -7,7 +7,7 @@ class CaseWorkflowItemForm(FormBase):
         print('CaseWorkflowItemForm')
         
         practice_area = LookupInput(name='practice_area', label='Practice Area', model='PracticeArea')
-        type = RadioButtonInput(name='type', label='Type', options=['Task', 'Event'])
+        type = RadioButtonInput(name='type', label='Type', options=['Task', 'Event'], value='Task')
         activity = LookupInput(name='activity', label='Activity', model='Activity')
         related_task = LookupInput(name='related_task', label='Related Task', model='CaseWorkflowItem')
         due_date_base = RadioButtonInput(name='due_date_base', label='Due Date Based On', options=['Start Date', 'End Date'])
@@ -15,7 +15,7 @@ class CaseWorkflowItemForm(FormBase):
         duration = NumberInput(name='duration', label='Duration')
         assigned_to = LookupInput(name='assigned_to', label='Assigned To', model='Staff', select='multi',
                                   text_field='full_name')
-        priority = RadioButtonInput(name='priority', label='Priority', options=['Normal', 'High'])
+        priority = RadioButtonInput(name='priority', label='Priority', options=['Normal', 'High'], value='Normal')
         notes = MultiLineInput(name='notes', label='Notes', rows=5)
         documents = FileUploadInput(name='documents', label='Documents', save=False)
         
