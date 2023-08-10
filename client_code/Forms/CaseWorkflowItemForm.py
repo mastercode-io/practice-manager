@@ -13,7 +13,8 @@ class CaseWorkflowItemForm(FormBase):
         due_date_base = RadioButtonInput(name='due_date_base', label='Due Date Based On', options=['Start Date', 'End Date'])
         before_after = RadioButtonInput(name='before_after', label='When', options=['Before', 'After'], save=False)
         duration = NumberInput(name='duration', label='Duration')
-        assigned_to = LookupInput(name='assigned_to', label='Assigned To', model='Staff', select='multi')
+        assigned_to = LookupInput(name='assigned_to', label='Assigned To', model='Staff', select='multi',
+                                  text_field='full_name')
         priority = RadioButtonInput(name='priority', label='Priority', options=['Normal', 'High'])
         notes = MultiLineInput(name='notes', label='Notes', rows=5)
         documents = FileUploadInput(name='documents', label='Documents', save=False)
