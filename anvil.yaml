@@ -564,11 +564,6 @@ db_schema:
       admin_ui: {width: 200}
       type: link_single
       target: lead_source
-  caseworkflow:
-    client: none
-    server: full
-    columns: []
-    title: CaseWorkflow
   case_stage:
     title: Case Stage
     client: none
@@ -1292,6 +1287,11 @@ db_schema:
     - name: updated_by
       admin_ui: {width: 200}
       type: string
+  case_workflow:
+    client: none
+    server: full
+    columns: []
+    title: Case Workflow
   expense:
     title: Expense
     client: none
