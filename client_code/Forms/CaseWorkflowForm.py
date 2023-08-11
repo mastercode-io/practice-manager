@@ -21,7 +21,7 @@ class CaseWorkflowForm(FormBase):
         
     def update_workflow_name(self, args):
         print('update_worflow_name', args)
-        if self.practice_area.value:
-            self.name.value = self.practice_area.value['name']
-        else:
+        if args.value is None:
             self.name.value = None
+        else:
+            self.name.value = self.practice_area.value['name']
