@@ -200,9 +200,19 @@ class CaseStatus:
 
 
 @model_type
+class CaseWorkflow:
+    _title = 'name'
+    
+    name = Attribute(field_type=types.FieldTypes.SINGLE_LINE)
+    practice_area = Relationship('PracticeArea')
+    items = Relationship('CaseWorkflowItem', with_many=True)
+
+
+@model_type
 class CaseWorkflowItem:
     _title = 'item_name'
     
+    case_workflow = Relationship('CaseWorkflow')
     practice_area = Relationship('PracticeArea')
     type = Attribute(field_type=types.FieldTypes.ENUM_SINGLE)
     activity = Relationship('Activity')
@@ -216,8 +226,8 @@ class CaseWorkflowItem:
     
     @staticmethod
     def get_item_name(args):
-        return f"{args['practice_area']} - {args['activity']}"
-    item_name = Computed(('practice_area', 'activity'), 'get_item_name')
+        return f"{args['case_workflow']} - {args['activity']}"
+    item_name = Computed(('case_workflow', 'activity'), 'get_item_name')
 
 
 @model_type
