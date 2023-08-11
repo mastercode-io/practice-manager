@@ -22,7 +22,7 @@ AppEnv.grid_settings  = {
 #     {'text': '', 'prefixIcon': 'e-add', 'align': 'Right'},
 #     {'text': '', 'prefixIcon': 'e-search', 'align': 'Right'},
 #   ],
-  'modes': ['Sort', 'Filter', 'InfiniteScroll', 'Edit', 'ForeignKey', 'Toolbar']
+#   'modes': ['Sort', 'Filter', 'InfiniteScroll', 'Edit', 'ForeignKey', 'Toolbar']
 }
 
 
