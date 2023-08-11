@@ -1,5 +1,6 @@
 from AnvilFusion.components.FormBase import FormBase
 from AnvilFusion.components.FormInputs import *
+from .. import Forms
 
 
 class CaseWorkflowForm(FormBase):
@@ -11,13 +12,13 @@ class CaseWorkflowForm(FormBase):
                                          on_change=self.update_workflow_name)
         self.items = LookupInput(name='items', label='Items', model='CaseWorkflowItem', select='multi', 
                                  text_field='item_name', add_item_text='Add Item', 
-                                 add_item_model='CaseWorkflowItem', add_item_form='CaseWorkflowItemForm')
+                                 add_item_model='CaseWorkflowItem', add_item_form=Forms.CaseWorkflowItemForm)
         
         fields = [self.name, self.practice_area, self.items]
         
         super().__init__(model='CaseWorkflowItem', fields=fields, **kwargs)
         
         
-    def update_workflow_name(self, **event_args):
+    def update_workflow_name(self, args):
         print('update_worflow_name')
         self.name.value = self.practice_area.value
