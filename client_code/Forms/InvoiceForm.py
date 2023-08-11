@@ -1,5 +1,6 @@
 from AnvilFusion.components.FormBase import FormBase, SubformBase, POPUP_WIDTH_COL3
 from AnvilFusion.components.FormInputs import *
+from ..Forms.ExpenseForm import EXPENSE_STATUS_OPEN, EXPENSE_STATUS_INVOICED, EXPENSE_STATUS_OPTIONS
 
 
 # expense status options
@@ -34,7 +35,7 @@ class InvoiceForm(FormBase):
             TextInput(name='payment_method', label='Payment Method'),
             TextInput(name='status', label='Status', select='single')
         ]
-        self.payments = BaseSubform(name='payments', fields=payment_fields, model='Payment', link_model='Invoice',
+        self.payments = SubformBase(name='payments', fields=payment_fields, model='Payment', link_model='Invoice',
                                     link_field='invoice', save=False)
 
         time_entry_fields = [
