@@ -1,5 +1,6 @@
 from .BankAccountForm import BankAccountForm
 from .CaseForm import CaseForm
+from .CaseWorkflowForm import CaseWorkflowForm
 from .CaseWorkflowItemForm import CaseWorkflowItemForm
 from .CheckForm import CheckForm
 from .ClientForm import ClientForm
