@@ -17,7 +17,7 @@ services:
 - source: /runtime/services/anvil/secrets.yml
   client_config: {}
   server_config: {}
-startup: {type: form, module: app.HomePage}
+startup: {type: module, module: dev}
 package_name: practiceMANAGER
 allow_embedding: false
 name: practiceMANAGER
@@ -564,6 +564,11 @@ db_schema:
       admin_ui: {width: 200}
       type: link_single
       target: lead_source
+  caseworkflow:
+    client: none
+    server: full
+    columns: []
+    title: CaseWorkflow
   case_stage:
     title: Case Stage
     client: none
