@@ -1,3 +1,4 @@
+from tkinter import N
 from AnvilFusion.components.FormBase import FormBase
 from AnvilFusion.components.FormInputs import *
 from .. import Forms
@@ -21,4 +22,7 @@ class CaseWorkflowForm(FormBase):
         
     def update_workflow_name(self, args):
         print('update_worflow_name')
-        self.name.value = self.practice_area.value['name']
+        if self.practice_area.value:
+            self.name.value = self.practice_area.value['name']
+        else:
+            self.name.value = None
