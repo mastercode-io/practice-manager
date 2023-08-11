@@ -1,4 +1,4 @@
-from AnvilFusion.components.FormBase import FormBase
+-from AnvilFusion.components.FormBase import FormBase
 from AnvilFusion.components.FormInputs import *
 from .. import Forms
 
