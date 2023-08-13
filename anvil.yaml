@@ -167,6 +167,10 @@ db_schema:
       admin_ui: {}
       type: link_single
       target: activity
+    - name: case_workflow
+      admin_ui: {}
+      type: link_single
+      target: case_workflow
     title: Case Workflow Item
   case_contact:
     title: Case Contact
@@ -1290,7 +1294,36 @@ db_schema:
   case_workflow:
     client: none
     server: full
-    columns: []
+    columns:
+    - name: created_by
+      admin_ui: {}
+      type: string
+    - name: created_time
+      admin_ui: {}
+      type: datetime
+    - name: items
+      admin_ui: {}
+      type: link_multiple
+      target: case_workflow_item
+    - name: name
+      admin_ui: {}
+      type: string
+    - name: practice_area
+      admin_ui: {}
+      type: link_single
+      target: practice_area
+    - name: tenant_uid
+      admin_ui: {}
+      type: string
+    - name: uid
+      admin_ui: {}
+      type: string
+    - name: updated_by
+      admin_ui: {}
+      type: string
+    - name: updated_time
+      admin_ui: {}
+      type: datetime
     title: Case Workflow
   expense:
     title: Expense
