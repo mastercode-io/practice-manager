@@ -55,7 +55,8 @@ class HomePage(HomePageTemplate):
                 {'id': 'invoice', 'text': 'Add Invoice'},
                 {'id': 'update', 'text': 'Add Update'},
                 ],
-            'open': self.appbar_menu_popup_open
+            'open': self.appbar_menu_popup_open,
+            'select': self.appbar_add_item_selected,
         })
         self.appbar_notification_list = ej.splitbuttons.DropDownButton({
             'cssClass': 'e-inherit e-caret-hide pm-menu-font',
@@ -123,8 +124,6 @@ class HomePage(HomePageTemplate):
         args.element.parentElement.style.left = '100px'
 
     @staticmethod
-    def sidebar_menu_select(args):
+    def appbar_add_item_selected(args):
         item = args['item']
         print(item.keys())
-        for key in item.keys():
-            print(key, item[key])
