@@ -128,5 +128,5 @@ class HomePage(HomePageTemplate):
         item = args['item']
         print(args.keys())
         print(args['name'])
-        print(item.keys())
-        print(args['element'].keys())
+        print(item, item.keys())
+        print(args['element'])
