@@ -40,6 +40,7 @@ class HomePage(HomePageTemplate):
         self.appbar_sidebar_toggle = ej.buttons.Button(
             {'cssClass': 'e-inherit', 'iconCss': 'fa-solid fa-bars pm-appbar-menu-icon'})
         self.appbar_add_item = ej.splitbuttons.DropDownButton({
+            'content': 'Add Item',
             'cssClass': 'e-inherit pm-menu-font',
             'iconCss': 'fa-solid fa-plus pm-appbar-menu-icon',
             'items': [
