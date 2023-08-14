@@ -56,7 +56,7 @@ class HomePage(HomePageTemplate):
                 {'id': 'update', 'text': 'Add Update'},
                 ],
             'open': self.appbar_menu_popup_open,
-            'select': self.appbar_add_item_selected,
+            'select': self.appbar_add_item_select,
         })
         self.appbar_notification_list = ej.splitbuttons.DropDownButton({
             'cssClass': 'e-inherit e-caret-hide pm-menu-font',
@@ -123,9 +123,9 @@ class HomePage(HomePageTemplate):
             args.element.getBoundingClientRect().top - args.element.parentElement.offsetHeight + 44) + 'px'
         args.element.parentElement.style.left = '100px'
 
-    @staticmethod
-    def appbar_add_item_selected(args):
-        nav.
+
+    def appbar_add_item_select(self, args):
+        nav.add_item_select(args, self.content_id)
         # item = args['item']
         # print(args.keys())
         # print(args['name'])
