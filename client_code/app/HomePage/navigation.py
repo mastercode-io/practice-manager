@@ -338,3 +338,30 @@ class Sidebar:
         if 'subcomponent' in component:
             time.sleep(0.5)
             self.menu_select(None, subcomponent=component['subcomponent'])
+            
+
+PMAPP_APPBAR_ADD_ITEM = {
+    'Add Time Entry': {'model': 'TimeEntry', 'type': 'form'},
+    'Add Event': {'model': 'Event', 'type': 'form'},
+    'Add Task': {'model': 'Task', 'type': 'form'},
+    'Add Document': {'model': 'Document', 'type': 'form'},
+    'Add Expense': {'model': 'Expense', 'type': 'form'},
+    'Add Contact': {'model': 'Contact', 'type': 'form'},
+    'Add Lead': {'model': 'Lead', 'type': 'form'},
+    'Add Case': {'model': 'Case', 'type': 'form'},
+    'Add Invoice': {'model': 'Invoice', 'type': 'form'},
+    'Add Update': {'model': 'Update', 'type': 'form'},
+}
+
+            
+def add_item_select(args, content_el_id):
+    print('Add item selected')
+    item = PMAPP_APPBAR_ADD_ITEM.get(args.item.text)
+    if item and item['type'] == 'form':
+        try:
+            form_class = getattr(AppEnv.forms, f"{item['model']}Form")
+            form_control = form_class(target=content_el_id)
+        except Exception as e:
+            print(e.args)
+            form_control = FormBase(model=item['model'], target=content_el_id)
+        form_control.form_show()

@@ -125,8 +125,9 @@ class HomePage(HomePageTemplate):
 
     @staticmethod
     def appbar_add_item_selected(args):
-        item = args['item']
-        print(args.keys())
-        print(args['name'])
-        print(item, item['text'], item.keys())
-        print(args['element'])
+        nav.
+        # item = args['item']
+        # print(args.keys())
+        # print(args['name'])
+        # print(item, item['text'], item.keys())
+        # print(args['element'])
