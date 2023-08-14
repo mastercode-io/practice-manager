@@ -41,7 +41,7 @@ class HomePage(HomePageTemplate):
             {'cssClass': 'e-inherit', 'iconCss': 'fa-solid fa-bars pm-appbar-menu-icon'})
         self.appbar_add_item = ej.splitbuttons.DropDownButton({
             'content': 'Add Item',
-            'cssClass': 'e-inherit pm-menu-font',
+            'cssClass': 'e-inherit e-caret-hide pm-menu-font',
             'iconCss': 'fa-solid fa-plus pm-appbar-menu-icon',
             'items': [
                 {'id': 'time_entry', 'text': 'Add Time Entry'},
