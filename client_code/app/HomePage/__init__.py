@@ -92,6 +92,7 @@ class HomePage(HomePageTemplate):
     def form_show(self, **event_args):
         # Append appbar controls to elements
         self.appbar.appendTo(jQuery('#pm-appbar')[0])
+        self.appbar_add_item.appendTo(jQuery('#pm-appbar-add-item')[0])
         self.appbar_notification_list.appendTo(jQuery('#pm-appbar-notification-list')[0])
         self.appbar_help_menu.appendTo(jQuery('#pm-appbar-help-menu')[0])
         self.appbar_user_menu.appendTo(jQuery('#pm-appbar-user-menu')[0])
