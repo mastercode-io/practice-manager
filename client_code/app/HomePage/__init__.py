@@ -39,6 +39,23 @@ class HomePage(HomePageTemplate):
         self.appbar_logo = ej.buttons.Button({'cssClass': 'e-inherit'})
         self.appbar_sidebar_toggle = ej.buttons.Button(
             {'cssClass': 'e-inherit', 'iconCss': 'fa-solid fa-bars pm-appbar-menu-icon'})
+        self.appbar_add_item = ej.splitbuttons.DropDownButton({
+            'cssClass': 'e-inherit pm-menu-font',
+            'iconCss': 'fa-solid fa-plus pm-appbar-menu-icon',
+            'items': [
+                {'id': 'time_entry', 'text': 'Add Time Entry'},
+                {'id': 'event', 'text': 'Add Event'},
+                {'id': 'task', 'text': 'Add Task'},
+                {'id': 'document', 'text': 'Add Document'},
+                {'id': 'expense', 'text': 'Add Expense'},
+                {'id': 'contact', 'text': 'Add Contact'},
+                {'id': 'lead', 'text': 'Add Lead'},
+                {'id': 'case', 'text': 'Add Case'},
+                {'id': 'invoice', 'text': 'Add Invoice'},
+                {'id': 'update', 'text': 'Add Update'},
+                ],
+            'open': self.appbar_menu_popup_open
+        })
         self.appbar_notification_list = ej.splitbuttons.DropDownButton({
             'cssClass': 'e-inherit e-caret-hide pm-menu-font',
             'iconCss': 'fa-solid fa-bell pm-appbar-menu-icon',
