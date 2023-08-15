@@ -28,7 +28,7 @@ AppEnv.grid_settings  = {
 
 class HomePage(HomePageTemplate):
     def __init__(self, **properties):
-        init_user_session()
+        AppEnv.logged_user = init_user_session()
         AppEnv.add_enumerations(model_list=app.models.ENUM_MODEL_LIST)
 
         self.content_id = 'pm-content'

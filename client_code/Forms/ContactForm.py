@@ -20,7 +20,7 @@ class ContactForm(FormBase):
         self.work_phone = TextInput(name='work_phone', label='Work Phone')
         self.title_position = TextInput(name='title_position', label='Title / Position')
 
-        self.personal_details = ComboInput(name='personal_details', model='Contact')
+        self.personal_details = MultiFieldInput(name='personal_details', model='Contact')
         self.address = MultiFieldInput(name='address', model='Contact')
         self.employment = MultiFieldInput(name='employment', model='Contact')
         self.criminal_history = MultiFieldInput(name='criminal_history', model='Contact', cols=2)

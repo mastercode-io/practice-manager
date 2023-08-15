@@ -1,5 +1,7 @@
 from AnvilFusion.components.FormBase import FormBase, POPUP_WIDTH_COL3
 from AnvilFusion.components.FormInputs import *
+from AnvilFusion.tools.utils import AppEnv
+from ..app.models import Staff
 from datetime import datetime, date
 
 
@@ -7,9 +9,10 @@ class TimeEntryForm(FormBase):
 
     def __init__(self, **kwargs):
 
+        logged_staff = Staff.get_by('work_email', AppEnv.logged_user.get('email')) if AppEnv.logged_user else None
         self.case = LookupInput(name='case', label='Case', model='Case', text_field='case_name')
         self.staff = LookupInput(name='staff', label='Staff', model='Staff', text_field='full_name',
-                                 value=constants.pm_logged_user['staff'])
+                                 value=logged_staff)
         self.activity = LookupInput(model='Activity', name='activity', label='Activity')
         self.billable = CheckboxInput(name='billable', label='This time entry is billable', label_position='After',
                                       value=True)
