@@ -1,6 +1,5 @@
 # Application navigation
 from anvil.js.window import jQuery, ej
-import sys
 import time
 from AnvilFusion.tools.utils import AppEnv
 from AnvilFusion.components.GridView import GridView
